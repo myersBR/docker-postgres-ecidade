@@ -15,4 +15,4 @@ COPY entrypoint/config-db.sh /docker-entrypoint-initdb.d/
 COPY entrypoint/config-roles.sql /docker-entrypoint-initdb.d/
 COPY entrypoint/vacuum.sql /docker-entrypoint-initdb.d/
 
-RUN curl -SL https://github.com/edsondewes/docker-postgres-ecidade/releases/download/v2.3.46/e-cidade-demo-2.3.46.tar.gz | tar -xz -C /docker-entrypoint-initdb.d/
+RUN curl -SL https://github.com/edsondewes/docker-postgres-ecidade/releases/download/2.3.46/e-cidade-2.3.46.tar.gz | tar -xz -C /docker-entrypoint-initdb.d/
