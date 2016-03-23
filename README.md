@@ -14,12 +14,18 @@ O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de fo
 
 ### Estrutura limpa
 ```sh
-$ docker run --name <nome> -d -e POSTGRES_USER=ecidade -e POSTGRES_DB=e-cidade edsondewes/postgres-ecidade
+$ docker run --name <nome> -d -p 5432:5432 -e POSTGRES_USER=ecidade -e POSTGRES_DB=e-cidade edsondewes/postgres-ecidade
 ```
 
 ### Estrutura preenchida com dados de exemplo
 ```sh
-$ docker run --name <nome> -d -e POSTGRES_USER=ecidade -e POSTGRES_DB=e-cidade edsondewes/postgres-ecidade:2.3.46-demo
+$ docker run --name <nome> -d -p 5432:5432 -e POSTGRES_USER=ecidade -e POSTGRES_DB=e-cidade edsondewes/postgres-ecidade:2.3.46-demo
+```
+
+_*** Os scripts de criação da estrutura e dados serão executados após a criação do container. Este processo pode demorar alguns minutos. Você pode acompanhar o andamento verificando os logs do container:_
+
+```sh
+$ docker logs <container>
 ```
 
 # Variáveis de ambiente
